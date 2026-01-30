@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Annu</title>
+    <style>
+        body {
+            background: #f0f2f5;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 350px;
+        }
+        h1 { color: #ff4757; font-size: 24px; }
+        .btn {
+            background: #2f3542;
+            color: white;
+            border: none;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover { background: #57606f; transform: scale(1.02); }
+        .msg-box {
+            display: none;
+            background: #fffafa;
+            border: 1px dashed #ff4757;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-style: italic;
+            color: #2f3542;
+            line-height: 1.5;
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Good Morning, Annu! ☀️</h1>
+    <p>Hope tu sahi hogi...</p>
+
+    <button id="btn1" class="btn" onclick="showNext('btn1', 'btn2')">Open My Secret 🔒</button>
+
+    <button id="btn2" class="btn hidden" onclick="showNext('btn2', 'btn3')">Are you sure? 🤔</button>
+
+    <button id="btn3" class="btn hidden" onclick="showFinal()">Last step... Click me</button>
+
+    <div id="finalMessage" class="msg-box">
+        Bhai, main thoda depression mein rehta hoon, pta nahi kyun par ye habit ho gayi hai teri hal-chal lene ki. Agar nahi leta toh apne hi thoughts mein depressed ho jata hoon. Bas tu sahi honi chahiye.
+    </div>
+</div>
+
+<script>
+    function showNext(currentId, nextId) {
+        document.getElementById(currentId).style.display = 'none';
+        document.getElementById(nextId).style.display = 'block';
+    }
+
+    function showFinal() {
+        document.getElementById('btn3').style.display = 'none';
+        document.getElementById('finalMessage').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
